@@ -288,14 +288,25 @@ section {
 
 .checklist {
   display: grid;
-  gap: 8px;
+  gap: 10px;
   margin-top: 14px;
 }
 
+.checklist div {
+  position: relative;
+  padding-left: 16px;
+  line-height: 1.45;
+}
+
 .checklist div::before {
-  content: "\2713 ";
-  color: var(--brand-2);
-  font-weight: 700;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.56em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f7f86;
 }
 
 footer {
