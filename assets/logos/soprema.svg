@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="120" viewBox="0 0 420 120" role="img" aria-label="Soprema logo">
+  <rect width="420" height="120" rx="16" fill="#ffffff"/>
+  <rect x="8" y="8" width="404" height="104" rx="12" fill="#0c3f84"/>
+  <circle cx="60" cy="60" r="22" fill="#f8b21a"/>
+  <text x="235" y="74" text-anchor="middle" font-family="Arial Black, Arial, sans-serif" font-size="40" fill="#ffffff">SOPREMA</text>
+</svg>

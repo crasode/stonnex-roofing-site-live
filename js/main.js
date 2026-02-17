@@ -22,5 +22,27 @@ document.querySelectorAll('[data-utm]').forEach((input) => {
   input.value = params.get(`utm_${key}`) || '';
 });
 
+document.querySelectorAll('[data-video-shell]').forEach((shell) => {
+  const video = shell.querySelector('video');
+  const fallback = shell.querySelector('[data-video-fallback]');
+  if (!video || !fallback) return;
+
+  const showFallback = () => {
+    fallback.classList.remove('hidden');
+  };
+
+  const hideFallback = () => {
+    fallback.classList.add('hidden');
+  };
+
+  video.addEventListener('loadeddata', hideFallback);
+  video.addEventListener('error', showFallback);
+
+  // If browser cannot play MOV well, show fallback immediately.
+  const canPlayQuicktime = video.canPlayType('video/quicktime');
+  const canPlayMp4 = video.canPlayType('video/mp4');
+  if (!canPlayQuicktime && !canPlayMp4) showFallback();
+});
+
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
